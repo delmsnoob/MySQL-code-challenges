@@ -26,7 +26,7 @@ Sale descending.
 */
 SELECT p.productName AS 'Product Name',
 	   SUM(o.quantityOrdered) AS 'Total # Ordered', -- SUM fuction adds across column
-	   SUM(o.quantityOrdered * o.priceEach) AS 'Total Sales'
+	   SUM(o.quantityOrdered) * o.priceEach AS 'Total Sales'
 FROM products p
 LEFT JOIN orderdetails o
 ON p.productCode = o.productCode
